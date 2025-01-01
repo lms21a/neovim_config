@@ -19,5 +19,8 @@ vim.keymap.set("n", "<C-a>n", function() send_tmux_command("select-window -t +")
 vim.keymap.set("n", "<C-a>p", function() send_tmux_command("select-window -t -") end, { desc = "Tmux: Previous window" })
 
 
+-- Keymaps for opening a terminal 
+vim.keymap.set("n", "<leader>th", ":rightbelow split | terminal<CR>", {})
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], {})
 
 
