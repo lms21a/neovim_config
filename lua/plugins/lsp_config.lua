@@ -10,7 +10,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require('mason-lspconfig').setup({
-        ensure_installed = {"lua_ls", "ruff", "pyright", "clangd"}
+        ensure_installed = {"lua_ls", "ruff", "clangd", "basedpyright"}
       })
     end
 
@@ -26,13 +26,12 @@ return {
       lspconfig.ruff.setup({
         capabilities = capabilities,
       })
-      lspconfig.pyright.setup({
+      lspconfig.basedpyright.setup({
         capabilities = capabilities,
-        filetypes = {"python"},
       })
       lspconfig.clangd.setup({
         init_options = {
-          fallbackFlags = {'--std=c++20'}
+          -- fallbackFlags = {'--std=c++20'}
       },
             capabilities = capabilities,
       })
